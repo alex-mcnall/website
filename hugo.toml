@@ -1,0 +1,16 @@
+baseURL = 'https://alexmcnall.co.uk/'
+languageCode = 'en-gb'
+title = "Alex McNall"
+sectionPagesMenu = 'main'
+theme = 'dario'
+
+[security]
+  enableInlineShortcodes = true
+
+[params]
+    description = 'Personal website of Alex McNall'
+    disableFontPreload = true
+
+    [params.author]
+        name = 'Alex Stuart McNall'
+        email = 'asm@alexmcnall.co.uk'

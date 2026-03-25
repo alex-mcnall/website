@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "LibreBaskerville";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/libre_baskerville/LibreBaskerville-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GentiumPlus";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/gentium_plus/GentiumPlus-Regular.ttf") format("truetype");
+}
+
+:root {
+  --font-family-base: "LibreBaskerville";
+  --font-family-body: "GentiumPlus";
+  --font-size-base: 16px;
+  --content-max-inline-size: 720px;
+}
+
+body {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+}
+
+
+figure {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figcaption {
+  text-align: center;
+}
+
+.qr img {
+  border: 3px solid white;
+  border-radius: 0 !important;
+  max-width: 40%;
+}
+
+nav ul {
+  font-family: var(--font-family-base)
+  font-size: calc(var(--font-size-base)*1.1);
+  list-style-type: none;
+}
