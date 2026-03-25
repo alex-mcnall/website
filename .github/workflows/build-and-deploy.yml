@@ -1,0 +1,39 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    environment: production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          submodules: true # Needed to fetch third party theme
+          fetch-depth: 1 # Gather only the current version of the theme
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.159.0'
+          extended: false
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: burnett01/rsync-deployments@v8
+        with:
+          switches: -avz --delete
+          path: public/
+          remote_path: ${{ secrets.REMOTE_PATH }}
+          remote_host: ${{ secrets.REMOTE_HOST }}
+          remote_port: ${{ secrets.REMOTE_PORT }}
+          remote_user: ${{ secrets.REMOTE_USER }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
