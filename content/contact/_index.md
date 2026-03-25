@@ -18,14 +18,14 @@ The easiest way for anyone to reach me is via [SimpleX Chat](https://simplex.cha
   class="qr"
 >}}
 
-If the QR code doesn't work, it may be that I am using a new SimpleX address and have forgot to update the image. If this is the case, open the link instead on your device.
+If the QR code doesn't work, it may be that I am using a new SimpleX address and have forgot to update the image. If this is the case, open the link on your device by selecting it or typing it into your web browser.
 
 ### Signal
 For people that know me personally, contact me using [Signal](https://signal.org/). If you have my phone number, you can already contact me in the app.
 
 If you don't have my phone number, ask me for my Signal username or phone number using another method of contact (i.e [SimpleX](#simplex-chat), email or in person).
 
-I don't share these publicly because I want to keep them limited to people who know me in real life only.
+I don't share these publicly because I want to keep them limited to people who know me in real life.
 
 ### Email
 If you must use email, it is {{<email>}}.
