@@ -49,3 +49,7 @@ nav ul {
   font-size: calc(var(--font-size-base)*1.1);
   list-style-type: none;
 }
+
+footer ul {
+  list-style-type: none;
+}
