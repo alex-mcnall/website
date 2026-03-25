@@ -1,0 +1,14 @@
+<footer>
+    <div class="footer-content">
+	<ul>
+            {{ range .Site.Menus.footer }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+        </ul>
+        {{- with .Site.Copyright }}
+        <p>{{ . }}</p>
+        {{- else }}
+        <p>&copy; {{ now.Year }} {{ .Site.Title }}</p>
+        {{- end }}
+    </div>
+</footer>
