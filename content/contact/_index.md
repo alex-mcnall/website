@@ -8,7 +8,9 @@ If you need to contact me, everything is here. I prefer not to use social media 
 
 ## Ways to contact me
 ### SimpleX Chat
-The easiest way to reach me is via [SimpleX Chat](https://simplex.chat/). If you don't have it already, it's very fast to set up and you don't need to create an account. Scan the QR code using the app, or open the URL:
+The easiest way to reach me is via [SimpleX Chat](https://simplex.chat/). I welcome everyone, including people I do not know in real life, to contact me using it.
+
+If you don't have it already, it's very fast to set up and you don't need to create an account. Scan the QR code using the app, or open the URL:
 
 {{< figure
   src="simplex_qr.jpg"
