@@ -9,9 +9,17 @@
 @font-face {
   font-family: "GentiumPlus";
   font-style: normal;
-  font-weight: 400 700;
+  font-weight: 400;
   font-display: swap;
   src: url("../fonts/gentium_plus/GentiumPlus-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GentiumPlus";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/gentium_plus/GentiumPlus-Bold.ttf") format("truetype");
 }
 
 :root {
