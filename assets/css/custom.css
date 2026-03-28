@@ -51,12 +51,6 @@ figcaption {
   max-width: 40%;
 }
 
-.main-menu {
-  font-family: var(--font-family-body);
-  font-weight: 700;
-  font-size: calc(var(--font-size-base)*1.25);
-}
-
 footer ul {
   list-style-type: none;
 }
