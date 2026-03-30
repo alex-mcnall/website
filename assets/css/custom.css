@@ -29,6 +29,16 @@
   --content-max-inline-size: 720px;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+  --bg-color: #fff;
+  }
+ }
+
+.dark-mode-off:root {
+  --bg-color: #fff;
+}
+
 body {
   font-family: var(--font-family-body);
   font-size: var(--font-size-base);
