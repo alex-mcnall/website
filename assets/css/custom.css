@@ -32,14 +32,17 @@
 @media (prefers-color-scheme: light) {
   :root {
   --bg-color: #fff;
+  --link-color: #002395;
   }
  }
 
 .dark-mode-off:root {
   --bg-color: #fff;
+  --link-color: #002395;
 }
 
 a {
+  color: var(--link-color);
   text-decoration: underline;
   text-decoration-thickness: 0.05em;
   text-underline-offset: .25em;
