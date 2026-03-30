@@ -39,6 +39,16 @@
   --bg-color: #fff;
 }
 
+a {
+  text-decoration: underline;
+  text-decoration-thickness: 0.05em;
+  text-underline-offset: .25em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.09em;
+}
+
 body {
   font-family: var(--font-family-body);
   font-size: var(--font-size-base);
