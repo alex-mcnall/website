@@ -7,24 +7,24 @@
 }
 
 @font-face {
-  font-family: "GentiumPlus";
+  font-family: "EBGaramond";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400 800;
   font-display: swap;
-  src: url("../fonts/gentium_plus/GentiumPlus-Regular.ttf") format("truetype");
+  src: url("../fonts/eb_garamond/EBGaramond-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "GentiumPlus";
-  font-style: normal;
-  font-weight: 600;
+  font-family: "EBGaramond";
+  font-style: italic;
+  font-weight: 400 800;
   font-display: swap;
-  src: url("../fonts/gentium_plus/GentiumPlus-Bold.ttf") format("truetype");
+  src: url("../fonts/eb_garamond/EBGaramond-Italic-VariableFont_wght.ttf") format("truetype");
 }
 
 :root {
   --font-family-base: "LibreBaskerville";
-  --font-family-body: "GentiumPlus";
+  --font-family-body: "EBGaramond";
   --font-size-base: 16px;
   --content-max-inline-size: 720px;
 }
