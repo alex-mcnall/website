@@ -58,7 +58,7 @@ a {
   text-underline-offset: .25em;
 }
 
-p a:hover {
+a:hover {
   text-decoration-thickness: 0.09em;
   opacity: 1;
 }
