@@ -25,8 +25,8 @@
 :root {
   --font-family-base: "LibreBaskerville";
   --font-family-body: "EBGaramond";
-  --font-size-base: 16px;
-  --content-max-inline-size: 720px;
+  --font-size-base: 1.4em;
+  --content-max-inline-size: 880px;
 }
 
 @media (prefers-color-scheme: light) {
@@ -58,14 +58,15 @@ a {
   text-underline-offset: .25em;
 }
 
-a:hover {
+p a:hover {
   text-decoration-thickness: 0.09em;
+  opacity: 1;
 }
 
 body {
   font-family: var(--font-family-body);
   font-size: var(--font-size-base);
-  font-weight: 400;
+  font-weight: 450;
 }
 
 figure {
@@ -86,4 +87,8 @@ figcaption {
 
 footer ul {
   list-style-type: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
 }
