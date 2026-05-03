@@ -60,7 +60,6 @@ a {
 
 a:hover {
   text-decoration-thickness: 0.09em;
-  opacity: 1;
 }
 
 body {
@@ -91,4 +90,8 @@ footer ul {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
+}
+
+p a:hover {
+  opacity: 1;
 }
