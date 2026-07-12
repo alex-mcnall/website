@@ -1,27 +1,13 @@
-baseURL = 'https://alexmcnall.co.uk/'
-languageCode = 'en-gb'
-title = "Alex McNall"
-sectionPagesMenu = 'main'
-theme = 'dario'
-
-[security]
-  enableInlineShortcodes = true
+baseURL = 'https://alexmcnall.co.uk'
+locale = 'en-gb'
+title = 'Alex McNall'
+theme = 'LucentLink-Hugo'
+minVersion = '0.162.1'
 
 [params]
-    description = 'Personal website of Alex McNall'
-    disableFontPreload = true
+  description = "Alex McNall's webpage with links to his projects."
 
-    [params.author]
-        name = 'Alex Stuart McNall'
-        email = 'asm@alexmcnall.co.uk'
+[taxonomies]
 
-[menu]
-  [[menu.footer]]
-    identifier = "github"
-    name = "GitHub"
-    url = "https://github.com/alex-mcnall"
-    weight = 1
-
-[caches]
-  [caches.images]
-    dir = ':cacheDir/images'
+[outputs]
+  home = ['HTML']

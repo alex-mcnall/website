@@ -1,11 +1,31 @@
 ---
-subtitle: "Stay tuned."
-#description: ""
+title: "Alex McNall"
+name: "Alex McNall"
+profileImage: ""
+socials:
+  - url: "https://github.com/alex-mcnall"
+    icon: "fab fa-github"
+
+# Link cards
+links:
+  - href: "https://github.com/alex-mcnall"
+    icon: "fab fa-github"
+    title: "GitHub"
+    description: "View my open-source projects"
+  - href: "https://alexmcnall.co.uk/simplex"
+    icon: "fas fa-comment"
+    title: "Message me"
+    description: "Message me using SimpleX"
+  - href: "mailto:asm@alexmcnall.co.uk"
+    icon: "fas fa-envelope"
+    title: "Email me"
+    description: "asm@alexmcnall.co.uk"
+
+# Messaging Etiquette. I use this as a noticeboard.
+messaging:
+  title: "Noticeboard"
+  items:
+    - icon: "fas fa-comment"
+      color: "text-blue-400"
+      text: "Anyone is welcome to message me using SimpleX chat via the link above, even if I don't know you."
 ---
-My website is brand new, there is stuff in the pipeline. For now, my contact page is up if you want to get in touch about anything :)
-
-## Site content
-{{<mainmenu>}}
-
-## Other links
-{{<footer>}}

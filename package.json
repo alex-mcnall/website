@@ -1,0 +1,32 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "postcss.config.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"hugo serve -D --disableFastRender\" \"mkdir -p ./static/css && postcss ./assets/css/input.css -o ./static/css/style.css --watch\" \"mkdir -p ./static/fonts/Font-Awesome/webfonts && cp ./assets/fonts/Font-Awesome/webfonts/fa-brands-400.woff2 ./static/fonts/Font-Awesome/webfonts/ && cp ./assets/fonts/Font-Awesome/webfonts/fa-solid-900.woff2 ./static/fonts/Font-Awesome/webfonts/\"",
+    "build": "mkdir -p ./static/css && mkdir -p ./static/fonts/Font-Awesome/webfonts && cp ./assets/fonts/Font-Awesome/webfonts/fa-brands-400.woff2 ./static/fonts/Font-Awesome/webfonts/ && cp ./assets/fonts/Font-Awesome/webfonts/fa-solid-900.woff2 ./static/fonts/Font-Awesome/webfonts/ && postcss ./assets/css/input.css -o ./static/css/style.css && hugo --minify && rm -rf ./public/images"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex-mcnall/website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alex-mcnall/website/issues"
+  },
+  "homepage": "https://github.com/alex-mcnall/website#readme",
+  "dependencies": {
+    "postcss": "^8.5.17",
+    "tailwindcss": "^4.3.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.2",
+    "autoprefixer": "^10.5.2",
+    "concurrently": "^10.0.3",
+    "postcss-cli": "^11.0.1"
+  }
+}

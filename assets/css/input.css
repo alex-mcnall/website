@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/* FontAwesome Brands and Solid only */
+@import "../fonts/Font-Awesome/css/fontawesome.min.css";
+@import "../fonts/Font-Awesome/css/brands.min.css";
+@import "../fonts/Font-Awesome/css/solid.min.css";
+
+/* Have dark mode follow what is stored in data-theme */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* Additional user-defined styles */
+@import "./custom.css";
