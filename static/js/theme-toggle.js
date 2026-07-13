@@ -1,39 +1,32 @@
-const colorScheme = 'data-theme';
-const themeToggle = document.getElementById('theme-toggle');
-const html = document.documentElement;
-const selectedTheme = localStorage.getItem(colorScheme)
-const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-// Set theme, if a setting is available
-if (selectedTheme) {
-    html.setAttribute(colorScheme, selectedTheme);
-    
-    // Make sure the toggle shows the correct icon
-
-} else if (window.matchMedia('prefers-color-scheme: light)').matches) {
-    html.setAttribute(colorScheme, 'light');
-}
-
-// Toggle on icon switch
-themeToggle.addEventListener('click', () => {
-    const currentTheme = html.getAttribute(colorScheme) || 'dark';
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-    html.setAttribute(colorScheme, newTheme);
-    localStorage.setItem(colorScheme, newTheme);
+// Select radio box based on theme selection once the page has loaded
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme) {
+        document.querySelector(`input[name="theme"][value="${savedTheme}"]`).checked = true;
+    } else {
+        document.querySelector('input[name="theme"][value="system"]').checked = true;
+    }
 });
 
-// Toggle if the system preference changes
-mediaQuery.addEventListener('change', (e) => {
-    const systemTheme = e.matches ? 'dark' : 'light';
+// Listen for system colour scheme change
+const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+mediaQuery.addEventListener("change", applyTheme);
 
-    setTheme(systemTheme);
-    localStorage.setItem(colorScheme, systemTheme);
+// Listen for radio button change
+const radioButtons = document.querySelectorAll('input[name="theme"]');
+
+// Event listener for radio button change
+radioButtons.forEach(radio => {
+    radio.addEventListener('change', function() {
+        if (this.value === 'light') {
+            localStorage.theme = 'light';
+        } else if (this.value === 'dark') {
+            localStorage.theme = 'dark';
+        } else if (this.value === 'system') {
+            localStorage.removeItem('theme');
+        }
+
+        // Re-run the initialization logic to apply the theme
+        applyTheme();
+    });
 });
-
-
-
-function setTheme(theme) {
-    document.documentElement.setAttribute(colorScheme, theme);
-    localStorage.setItem(colorScheme, theme);
-}

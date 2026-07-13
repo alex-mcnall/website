@@ -1,8 +1,55 @@
-<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" Title="Toggle colour scheme">
-  <div class="toggle-track border-gray-700 dark:border-white border-1 bg-black/10 dark:bg-white/10">
-    <div class="toggle-thumb bg-white dark:bg-white/10">
-      <i class="color-scheme-icon icon-moon fa-solid fa-moon"></i>
-      <i class="color-scheme-icon icon-sun fa-solid fa-sun"></i>
+<div class="flex justify-center items-center justify-self-start">
+  <form>
+    <div class="flex gap-1 bg-black/10 dark:bg-white/10 p-px rounded-full">
+      <div class="relative">
+        <input 
+          type="radio" 
+          id="system" 
+          name="theme" 
+          value="system"
+          class="peer absolute opacity-0 cursor-pointer"
+        >
+        <label 
+          for="system" 
+          class="peer-checked:bg-white dark:peer-checked:bg-white/20 flex items-center justify-center w-8 h-8 rounded-full cursor-pointer text-gray-800 dark:text-white transition-all"
+        >
+          <i class="fas fa-desktop"></i>
+        </label>
+      </div>
+
+      <div class="relative">
+        <input 
+          type="radio" 
+          id="light" 
+          name="theme" 
+          value="light"
+          class="peer absolute opacity-0 cursor-pointer"
+        >
+        <label 
+          for="light" 
+          class="peer-checked:bg-white flex items-center justify-center w-8 h-8 rounded-full cursor-pointer text-gray-800 dark:text-white transition-all"
+        >
+          <i class="fas fa-sun"></i>
+        </label>
+      </div>
+
+      <div class="relative">
+        <input 
+          type="radio" 
+          id="dark" 
+          name="theme" 
+          value="dark"
+          class="peer absolute opacity-0 cursor-pointer"
+        >
+        <label 
+          for="dark" 
+          class="dark:peer-checked:bg-white/20 flex items-center justify-center w-8 h-8 rounded-full cursor-pointer text-gray-800 dark:text-white transition-all"
+        >
+          <i class="fas fa-moon"></i>
+        </label>
+      </div>
+
     </div>
-  </div>
-</button>
+  </form>
+</div>
+<script src="{{ .Site.BaseURL }}js/theme-toggle.js"></script>
