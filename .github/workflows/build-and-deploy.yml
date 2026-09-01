@@ -45,6 +45,7 @@ jobs:
           tar -czf "website-${GITHUB_SHA}.tar.gz" -C public .
       
       - name: Create GitHub release
+        working-directory: website
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
