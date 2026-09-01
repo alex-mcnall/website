@@ -43,6 +43,8 @@ jobs:
 
       - name: Package website files
         working-directory: website
+        env:
+          GZIP: "-9"
         run: |
           test -d public
           tar -czf "website-${GITHUB_SHA}.tar.gz" -C public .
