@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build and create release
 
 on:
   push:
@@ -6,6 +6,9 @@ on:
     paths-ignore:
       - 'README.md'
       - 'LICENSE'
+
+permissions:
+  contents: read
 
 jobs:
   build:
@@ -43,7 +46,23 @@ jobs:
         run: |
           test -d public
           tar -czf "website-${GITHUB_SHA}.tar.gz" -C public .
-      
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: "website-${GITHUB_SHA}"
+          path: "website/website-${GITHUB_SHA}.tar.gz"
+          compression-level: 0
+          if-no-files-found: error
+  
+  release:
+    needs: build
+    runs-on: ubuntu-24.04
+    environment: production
+    permissions:
+      contents: write
+
+    steps:
       - name: Create GitHub release
         working-directory: website
         env:
@@ -52,6 +71,6 @@ jobs:
           release_tag="website-${GITHUB_SHA}"
 
           gh release create "$release_tag" \
-            "website-${GITHUB_SHA}.tar.gz" \
+            "${release_tag}.tar.gz" \
             --target "$GITHUB_SHA" \
             --title "Version ${GITHUB_SHA}"
