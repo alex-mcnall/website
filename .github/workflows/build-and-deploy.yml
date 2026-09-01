@@ -17,6 +17,7 @@ jobs:
         with:
           submodules: true
           fetch-depth: 1 # Gather only the current version of the theme
+          path: website
       
       - name: Set up Hugo
         uses: peaceiris/actions-hugo@v3
@@ -30,18 +31,26 @@ jobs:
           node-version: 22.x
 
       - name: Install Node.js dependencies
+        working-directory: website
         run: npm ci
 
       - name: Build
+        working-directory: website
         run: npm run build --if-present
 
-      - name: Deploy
-        uses: burnett01/rsync-deployments@v8
-        with:
-          switches: -avz --delete
-          path: public/
-          remote_path: ${{ secrets.REMOTE_PATH }}
-          remote_host: ${{ secrets.REMOTE_HOST }}
-          remote_port: ${{ secrets.REMOTE_PORT }}
-          remote_user: ${{ secrets.REMOTE_USER }}
-          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Package website files
+        working-directory: website
+        run: |
+          test -d public
+          tar -czf "website-${GITHUB_SHA}.tar.gz" -C public .
+      
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          release_tag="website-${GITHUB_SHA}"
+
+          gh release create "$release_tag" \
+            "website-${GITHUB_SHA}.tar.gz" \
+            --target "$GITHUB_SHA" \
+            --title "Version ${GITHUB_SHA}"
