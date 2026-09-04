@@ -7,7 +7,7 @@ phases:
     command:
       - apt-get update -y
       - apt-get install hugo
-  pre-build:
+  pre_build:
     command:
       - npm ci
   build:
