@@ -27,5 +27,5 @@ messaging:
   items:
     - icon: "fas fa-comment"
       color: "text-blue-400"
-      text: "Anyone is welcome to message me using SimpleX chat via the link above, even if I don't know you."
+      text: "SimpleX is the preferred way to contact me."
 ---
