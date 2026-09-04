@@ -4,14 +4,14 @@ phases:
   install:
     runtime-versions:
       nodejs: 22.x
-    command:
+    commands:
       - apt-get update -y
       - apt-get install hugo
   pre_build:
-    command:
+    commands:
       - npm ci
   build:
-    command:
+    commands:
       - npm run build --if-present
       - tar -czf "website.tar.gz" -C public .
 
