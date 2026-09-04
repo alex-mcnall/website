@@ -6,7 +6,7 @@ phases:
       nodejs: 22.x
     commands:
       - apt-get update -y
-      - apt-get install hugo
+      - apt-get install -y hugo
   pre_build:
     commands:
       - npm ci
