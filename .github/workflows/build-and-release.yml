@@ -6,6 +6,8 @@ on:
     paths-ignore:
       - 'README.md'
       - 'LICENSE'
+      - 'amplify.yml'
+      - 'buildspec.yml'
 
 permissions:
   contents: read
